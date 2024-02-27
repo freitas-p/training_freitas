@@ -1,0 +1,50 @@
+---
+title: "Into to Quarto"
+format: html
+bibliography: references.bib
+---
+
+# Headers 1
+
+I will start writing my code!
+
+## Header 2
+
+This is a very important issue, please check: [@freitas2024].
+
+*For italic text, we use this*
+
+**For bold we should use two asterisks**
+
+##### Header 5
+
+-   item 1
+-   item 2
+-   item 3
+
+Find the workshop material in [this link.](https://learning.nceas.ucsb.edu/2024-02-arctic/session_03.html)
+
+# References
+
+[@freitas2024]
+
+This is a table
+
+| Location | Coordinates | Description |
+|----------|-------------|-------------|
+| Tuk      | 6537        | Very nice   |
+|          |             |             |
+|          |             |             |
+
+Lets insert a code chunck
+
+```{r}
+
+x <- 4*8
+
+hights_ft <- c(5.2, 6.0, 5.7)
+
+hights_ft
+
+```
+

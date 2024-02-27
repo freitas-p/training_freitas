@@ -1,0 +1,73 @@
+---
+title: "Mini Literate Analysis"
+format: html
+---
+
+## Introduction of my analysis
+
+### About the data
+
+This is chemistry data. The data was collected from the ocean using water bootles. This data was downloaded from the following link of Arctic Data Center [Arctic Data Center](https://arcticdata.io/catalog/view/doi:10.18739/A25T3FZ8X).
+
+### Setup of the analysis
+
+```{r}
+
+library(readr)
+
+```
+
+### Let's read the data!
+
+```{r}
+
+bg_chem <- read_csv("data/BGchem2008data.csv")
+
+```
+
+Exploring data
+
+```{r}
+
+colnames(bg_chem)
+summary(bg_chem)
+
+#Prints all the dates in a specific column:
+
+unique(bg_chem$Date)
+
+```
+
+## Analysis
+
+### Let's calculate summary statistics
+
+```{r}
+
+nitrate <- mean(bg_chem$NO3)
+nitrite <- mean(bg_chem$NO2)
+amm <- mean(bg_chem$NH4)
+phos <- mean(bg_chem$P)
+
+```
+
+### Let's calculate the mean Readfield ratio
+
+```{r}
+
+ratio <- (nitrate + nitrite + amm)/phos
+
+```
+
+### Let's plot the ratio
+
+```{r}
+
+plot(bg_chem$P,bg_chem$NO3 + bg_chem$NO2 + bg_chem$NH4)
+
+```
+
+## Conclusion
+
+The Redfield ratio is `r round(ratio)`
+
